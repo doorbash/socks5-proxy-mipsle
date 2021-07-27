@@ -31,9 +31,16 @@ func (d DNSResolver) Resolve(ctx context.Context, name string) (context.Context,
 func main() {
 	parser := flags.NewParser(&opts, flags.Default)
 
-	_, err := parser.Parse()
+	parser.Usage = "[OPTIONS] address"
+
+	args, err := parser.Parse()
 
 	if err != nil {
+		return
+	}
+
+	if len(args) == 0 {
+		parser.WriteHelp(os.Stdout)
 		return
 	}
 
@@ -57,7 +64,7 @@ func main() {
 		)
 	}
 
-	if err := server.ListenAndServe("tcp", ":10800"); err != nil {
+	if err := server.ListenAndServe("tcp", args[0]); err != nil {
 		panic(err)
 	}
 }
