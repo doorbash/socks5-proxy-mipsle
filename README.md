@@ -17,7 +17,7 @@ Help Options:
 
 ## Example
 ```
-./socks5-proxy-mipsle :1080
+./socks5-proxy-mipsle 0.0.0.0:1080
 ./socks5-proxy-mipsle localhost:1080
-./socks5-proxy-mipsle --dns=8.8.8.8:53 :1080
+./socks5-proxy-mipsle --dns=8.8.8.8:53 0.0.0.0:1080
 ```
