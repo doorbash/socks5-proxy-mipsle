@@ -1,7 +1,7 @@
 
 ## Build
 ```
-GOOS=linux GOARCH=mipsle GOMIPS=softfloat go build -trimpath -ldflags="-s -w" -o socks5-proxy-mipsle
+go build
 ```
 
 ## Usage
